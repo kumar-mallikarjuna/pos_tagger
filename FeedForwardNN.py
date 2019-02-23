@@ -25,7 +25,7 @@ def feature_extractor(sentence, index):
         'suffix-1': sentence[index][-1],
         'suffix-2': sentence[index][-2:],
         'suffix-3': sentence[index][-3:],
-        'has_hypen': '-' in sentence[index],
+        'has_hyphen': '-' in sentence[index],
         'is_number': sentence[index].isdigit(),
         'capitals_inside': sentence[index][1:] != sentence[index][1:].lower()
     }
@@ -43,15 +43,15 @@ def transform(tagged_sentences):
 
     return X, y
 
-training_sentences = nltk.corpus.treebank.tagged_sents()
+training_sentences = nltk.corpus.treebank.tagged_sents()    # Loading training sentences from Treebank Corpus
 
-x, y = transform(training_sentences)
+x, y = transform(training_sentences)    # Extract features from training_sentences
 
-vectorizer_x = DictVectorizer(sparse=False)
+vectorizer_x = DictVectorizer(sparse=False)     # Vectorizer for Input
 vectorizer_x.fit(x[:m])
 x = vectorizer_x.transform(x[:m])
 
-vectorizer_y = DictVectorizer(sparse=False)
+vectorizer_y = DictVectorizer(sparse=False)     # Vectorizer for Target
 vectorizer_y.fit(y[:m])
 y = vectorizer_y.transform(y[:m])
 
