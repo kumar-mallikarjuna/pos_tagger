@@ -3,7 +3,12 @@
 Simple POS Tagger based on Feed Forward Neural Networks.
 Training is performed on Treebank Corpus.
 
-Features<sup>[1]</sup> used are:
+Requirements:
+* Keras (Tensorflow)
+* nltk
+* scikit-learn
+
+Features<sup>[1]</sup> used:
 * Word
 * Is first word in sentence
 * Is last word in sentence

@@ -1,4 +1,3 @@
-import tensorflow as tf
 from tensorflow import keras
 import nltk
 from sklearn.feature_extraction import DictVectorizer
@@ -93,4 +92,4 @@ def run(model_name, sentence):
 
     return l
 
-print(run("./model", "What is this?"))
+print(run("./model", "Outside my mind, nothing is real."))
